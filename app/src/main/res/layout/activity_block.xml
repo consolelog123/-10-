@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0B0E14"
+    android:padding="32dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="⏰"
+            android:textSize="72sp"
+            android:layout_marginBottom="32dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="该休息了"
+            android:textColor="#F8FAFC"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="16dp" />
+
+        <TextView
+            android:id="@+id/timeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="现在是 22:00:00"
+            android:textColor="#94A3B8"
+            android:textSize="18sp"
+            android:layout_marginBottom="32dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="现在不能刷抖音\n早睡早起身体好"
+            android:textColor="#F8FAFC"
+            android:textSize="16sp"
+            android:gravity="center"
+            android:lineSpacingExtra="4dp"
+            android:layout_marginBottom="48dp" />
+
+        <TextView
+            android:id="@+id/unlockHintText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="输入密码可临时解锁 10 分钟"
+            android:textColor="#94A3B8"
+            android:textSize="14sp"
+            android:layout_marginBottom="12dp" />
+
+        <EditText
+            android:id="@+id/passwordInput"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:hint="输入密码"
+            android:inputType="textPassword"
+            android:textColor="#F8FAFC"
+            android:textColorHint="#475569"
+            android:background="@android:drawable/edit_text"
+            android:padding="12dp"
+            android:gravity="center"
+            android:layout_marginBottom="16dp" />
+
+        <Button
+            android:id="@+id/unlockButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="临时解锁"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#F97316"
+            android:paddingHorizontal="32dp"
+            android:paddingVertical="12dp" />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="早睡早起身体好 💤"
+        android:textColor="#475569"
+        android:textSize="14sp"
+        android:layout_marginBottom="16dp" />
+
+</RelativeLayout>

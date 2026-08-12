@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0F172A">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="限制时间段"
+            android:textColor="#F8FAFC"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="16dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="开始时间"
+            android:textColor="#94A3B8"
+            android:textSize="14sp"
+            android:layout_marginBottom="8dp" />
+
+        <TimePicker
+            android:id="@+id/startTimePicker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:timePickerMode="spinner"
+            android:layout_marginBottom="16dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="结束时间"
+            android:textColor="#94A3B8"
+            android:textSize="14sp"
+            android:layout_marginBottom="8dp" />
+
+        <TimePicker
+            android:id="@+id/endTimePicker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:timePickerMode="spinner"
+            android:layout_marginBottom="32dp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#1E293B"
+            android:layout_marginVertical="16dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="白名单日期（选中的日期不限制）"
+            android:textColor="#F8FAFC"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="16dp" />
+
+        <CheckBox
+            android:id="@+id/mondayCheck"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="周一"
+            android:textColor="#F8FAFC"
+            android:textSize="16sp" />
+
+        <CheckBox
+            android:id="@+id/tuesdayCheck"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="周二"
+            android:textColor="#F8FAFC"
+            android:textSize="16sp" />
+
+        <CheckBox
+            android:id="@+id/wednesdayCheck"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="周三"
+            android:textColor="#F8FAFC"
+            android:textSize="16sp" />
+
+        <CheckBox
+            android:id="@+id/thursdayCheck"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="周四"
+            android:textColor="#F8FAFC"
+            android:textSize="16sp" />
+
+        <CheckBox
+            android:id="@+id/fridayCheck"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="周五"
+            android:textColor="#F8FAFC"
+            android:textSize="16sp" />
+
+        <CheckBox
+            android:id="@+id/saturdayCheck"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="周六"
+            android:textColor="#F8FAFC"
+            android:textSize="16sp" />
+
+        <CheckBox
+            android:id="@+id/sundayCheck"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="周日"
+            android:textColor="#F8FAFC"
+            android:textSize="16sp"
+            android:layout_marginBottom="32dp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#1E293B"
+            android:layout_marginVertical="16dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="解锁密码"
+            android:textColor="#F8FAFC"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="设置密码后，可在阻止界面临时解锁 10 分钟"
+            android:textColor="#94A3B8"
+            android:textSize="14sp"
+            android:layout_marginBottom="12dp" />
+
+        <EditText
+            android:id="@+id/passwordInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="输入新密码（留空保持不变）"
+            android:inputType="textPassword"
+            android:textColor="#F8FAFC"
+            android:textColorHint="#475569"
+            android:background="@android:drawable/edit_text"
+            android:padding="12dp"
+            android:layout_marginBottom="32dp" />
+
+        <Button
+            android:id="@+id/saveButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="保存设置"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#38BDF8"
+            android:paddingVertical="16dp"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+</ScrollView>
