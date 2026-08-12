@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
 
     private static final int REQUEST_USAGE_STATS = 1001;
     private static final int REQUEST_OVERLAY = 1002;
+    private static final int REQUEST_NOTIFICATION = 1003;
 
     private TextView statusText;
     private Button startButton;
@@ -55,8 +56,9 @@ public class MainActivity extends AppCompatActivity {
     private void updateStatus() {
         boolean usagePermission = hasUsageStatsPermission();
         boolean overlayPermission = hasOverlayPermission();
+        boolean notificationPermission = hasNotificationPermission();
 
-        if (usagePermission && overlayPermission) {
+        if (usagePermission && overlayPermission && notificationPermission) {
             int startHour = configManager.getStartHour();
             int endHour = configManager.getEndHour();
             String timeRange = String.format("%02d:00 - %02d:00", startHour, endHour);
@@ -72,6 +74,9 @@ public class MainActivity extends AppCompatActivity {
             }
             if (!overlayPermission) {
                 sb.append("✗ 显示在其他应用上层权限\n");
+            }
+            if (!notificationPermission) {
+                sb.append("✗ 通知权限\n");
             }
             statusText.setText(sb.toString());
             startButton.setEnabled(false);
@@ -97,8 +102,22 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
+    private boolean hasNotificationPermission() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            return ContextCompat.checkSelfPermission(this,
+                Manifest.permission.POST_NOTIFICATIONS) == PackageManager.PERMISSION_GRANTED;
+        }
+        return true;
+    }
+
     private void requestPermissions() {
-        if (!hasUsageStatsPermission()) {
+        if (!hasNotificationPermission()) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+                ActivityCompat.requestPermissions(this,
+                    new String[]{Manifest.permission.POST_NOTIFICATIONS},
+                    REQUEST_NOTIFICATION);
+            }
+        } else if (!hasUsageStatsPermission()) {
             Intent intent = new Intent(Settings.ACTION_USAGE_ACCESS_SETTINGS);
             startActivityForResult(intent, REQUEST_USAGE_STATS);
         } else if (!hasOverlayPermission()) {
